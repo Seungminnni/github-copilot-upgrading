@@ -1,5 +1,3 @@
-import distribute_setup
-distribute_setup.use_setuptools()
 from setuptools import setup
 
 tests_require = ['pytest']
@@ -9,9 +7,7 @@ setup(
     version = "0.0.6",
     packages = ['guachi'],
     include_package_data=True,
-    package_data = {
-        '': ['distribute_setup.py'],
-        },
+     # package_data, data_files 등은 필요시 추가
 
     # metadata
     author = "Alfredo Deza",
@@ -32,7 +28,6 @@ You do not need to know anything about how **guachi** stores the values, just
 treat it like a regular dictionary!
 
 User Interaction
-------------------
 Let's assume you are dealing with a Twitter application that uses a ``ini`` file.
 This is a sampla INI file and how it looks::
 
@@ -68,7 +63,6 @@ in our twitter app by calling it this way::
 
 
 Getting Deafults
----------------------
 Above we inspected an INI file with some changed values. But what happens when the user
 has none?
 
@@ -81,7 +75,6 @@ it in some sub-module::
     True
 
 Updating Values
------------------
 What if a user makes changes? We can always save and update what we read from the INI
 file at load time, to make sure we have the latest changes from the user::
 
