@@ -68,9 +68,9 @@ class TestIntegration(unittest.TestCase):
         self.assertEqual(foo.get_ini_options(), {})
         self.assertEqual(foo.get_default_options(), {})
         self.assertEqual(foo.get_dict_config(), 
-                {u'web_port': u'8080', 
-                 u'web_host': u'localhost', 
-                 u'db_host': u'example.com', 
-                 u'db_port': 0})
+            {'web_port': '8080', 
+             'web_host': 'localhost', 
+             'db_host': 'example.com', 
+             'db_port': 0})
         self.assertEqual(foo.stored_config(), {})
         self.assertTrue(foo.integrity_check())
